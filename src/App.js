@@ -1,23 +1,38 @@
-import logo from './logo.svg';
 import './App.css';
+import Customerlist from './components/Customerlist';
+import AppBar from '@material-ui/core/AppBar';
+import Toolbar from '@material-ui/core/Toolbar';
+import Typography from '@material-ui/core/Typography';
+import Traininglist from './components/Traininglist';
+import {
+  BrowserRouter,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      
+      <AppBar position="static">
+        <Toolbar>
+          <Typography variant="h6">
+            PersonalTrainer - 
+            Customers
+          </Typography>
+        </Toolbar>
+      </AppBar>
+      <Customerlist />
+      <AppBar position="static">
+        <Toolbar>
+          <Typography variant="h6">
+            PersonalTrainer - 
+            Trainings
+          </Typography>
+        </Toolbar>
+      </AppBar>
+      <Traininglist />
     </div>
   );
 }
